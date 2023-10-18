@@ -1,0 +1,263 @@
+@font-face {
+  font-family: "fira-code";
+  src: url("./../assets/Fira_Code/FiraCode-VariableFont_wght.ttf");
+}
+
+@import "./vars/vars";
+
+* {
+  font-family: "fira-code" !important;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  background-color: $background-color;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.h250px {
+  height: 250px;
+}
+
+.h40px {
+  height: 40px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w100v {
+  width: 100vw;
+}
+
+.h100v {
+  height: 100vh;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.pad-lf-20 {
+  padding: 0 20px;
+}
+
+.pad-lr-20 {
+  padding: 0 20px;
+}
+
+.b-right {
+  border-right: 1px solid $border-color;
+}
+
+.b-left {
+  border-left: 1px solid $border-color;
+}
+
+.b-bottom {
+  border-bottom: 1px solid $border-color;
+}
+
+.b-top {
+  border-top: 1px solid $border-color;
+}
+
+.border {
+  border: 1px solid $border-color;
+}
+
+.b-width-05 {
+  border-width: 0.5px;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.outline {
+  outline: 1px solid $border-color;
+}
+
+.p-top-50 {
+  padding-top: 50px;
+}
+
+.p-bottom-50 {
+  padding-bottom: 50px;
+}
+
+//flex
+.f {
+  display: flex;
+}
+.flex {
+  display: flex;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.bg-primary {
+  background-color: $background-color;
+}
+.color-active {
+  color: $text-color-active;
+}
+
+.color-inactive {
+  color: $text-color-inactive;
+}
+
+.color-black {
+  color: #011221;
+}
+
+.w70 {
+  width: 70%;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.w250px {
+  width: 250px;
+}
+
+.w50px {
+  width: 50px;
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.flex-d-r {
+  flex-direction: row;
+}
+
+.flex-d-c {
+  flex-direction: column;
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.aic {
+  align-items: center;
+}
+
+.pad-t-20px {
+  padding-top: 20px;
+}
+
+.pad-20px {
+  padding: 20px;
+}
+
+.g20px {
+  gap: 20px;
+}
+
+.g10px {
+  gap: 10px;
+}
+
+.fs-m {
+  font-size: 16px;
+}
+
+.pad-lr-10 {
+  padding: 0 10px;
+}
+
+.pad-l-10 {
+  padding-left: 10px;
+}
+.pad-l-20 {
+  padding-left: 20px;
+}
+
+.pad-5px {
+  padding: 5px;
+}
+
+.pad-l-250px {
+  padding-left: 250px;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.h35px {
+  height: 35px;
+}
+
+.bg-black {
+  background-color: #011221 !important;
+}
+
+.m-20px {
+  padding: 20px;
+}
+
+.p-20px {
+  padding: 20px;
+}
+
+.h100-35px {
+  height: calc(100% - 35px);
+}
+
+.br-15 {
+  border-radius: 15px;
+}
+
+pre,
+code {
+  overflow: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-shadow: none !important;
+  z-index: 100;
+  //   letter-spacing: 0.00938em !important;
+}
+
+.code-wrap {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.overflow-h {
+  overflow: hidden;
+}
+
+.overflow-s {
+  overflow: scroll;
+}
+
+.curson-p {
+  cursor: pointer;
+}
+
+.skill-logo {
+  width: 60px;
+  height: 60px;
+}

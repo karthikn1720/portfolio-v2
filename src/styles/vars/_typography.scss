@@ -1,0 +1,109 @@
+$font-family: '"Inter", "Helvetica", "Arial", sans-serif';
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$typography: (
+  html-font-size: 14,
+  // Fonts & HTML body MUST be set in the static HTML
+  font-family: $font-family,
+  font-size: 14,
+  font-weight-light: $font-weight-light,
+  font-weight-regular: $font-weight-regular,
+  font-weight-medium: $font-weight-medium,
+  font-weight-bold: $font-weight-bold,
+  h1: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 2.857rem,
+    line-height: 3.5rem,
+    letter-spacing: -0.01562em
+  ),
+  h2: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 2.286rem,
+    line-height: 2.786rem,
+    letter-spacing: -0.00833em
+  ),
+  h3: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 2rem,
+    line-height: 2.429rem,
+    letter-spacing: 0
+  ),
+  h4: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 1.714rem,
+    line-height: 2.071rem,
+    letter-spacing: 0.00735em
+  ),
+  h5: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 1.429rem,
+    line-height: 1.714rem,
+    letter-spacing: 0
+  ),
+  h6: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 1.143rem,
+    line-height: 1.429rem,
+    letter-spacing: 0.0075em
+  ),
+  subtitle1: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 1rem,
+    line-height: 1.75,
+    letter-spacing: 0.00938em
+  ),
+  subtitle2: (
+    font-family: $font-family,
+    font-weight: $font-weight-bold,
+    font-size: 0.875rem,
+    line-height: 1.57,
+    letter-spacing: 0.00714em
+  ),
+  body1: (
+    font-family: $font-family,
+    font-weight: $font-weight-regular,
+    font-size: 1rem,
+    line-height: 1.5,
+    letter-spacing: 0.00938em
+  ),
+  body2: (
+    font-family: $font-family,
+    font-weight: $font-weight-regular,
+    font-size: 0.875rem,
+    line-height: 1.43,
+    letter-spacing: 0.01071em
+  ),
+  button: (
+    font-family: $font-family,
+    font-weight: $font-weight-medium,
+    font-size: 0.875rem,
+    line-height: 1.21rem,
+    letter-spacing: 0.02857em,
+    text-transform: uppercase
+  ),
+  caption: (
+    font-family: $font-family,
+    font-weight: $font-weight-regular,
+    font-size: 0.75rem,
+    line-height: 1.66,
+    letter-spacing: 0.03333em
+  ),
+  overline: (
+    font-family: $font-family,
+    font-weight: $font-weight-regular,
+    font-size: 0.75rem,
+    line-height: 2.66,
+    letter-spacing: 0.08333em,
+    text-transform: uppercase
+  )
+);

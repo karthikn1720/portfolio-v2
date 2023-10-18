@@ -1,0 +1,20 @@
+.loading-container {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: wheat;
+}
+
+.trigger-animation {
+  animation: forwards 1s Loading;
+}
+
+@keyframes Loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

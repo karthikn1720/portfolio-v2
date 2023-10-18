@@ -1,0 +1,9 @@
+@import "styles/_index.scss";
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: $background-color;
+}
