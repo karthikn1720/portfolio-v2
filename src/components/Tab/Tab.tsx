@@ -7,12 +7,12 @@ const Tab = () => {
     useTabContext();
 
   return (
-    <div className="tab-container outline h35px flex">
+    <div className="tab-container outline h35px flex overflow-s no-wrap">
       {activeTabs.map((tab, i) => {
         return (
           <div
             key={i}
-            className="curson-p tab h100 g20px flex b-right pad-lr-20 center"
+            className="curson-p tab w-max h100 g20px flex b-right pad-lr-20 center"
           >
             <Text onClick={() => handleChangeTab(tab)}>{tab.label}</Text>
             <button

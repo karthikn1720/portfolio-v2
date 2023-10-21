@@ -49,7 +49,7 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
   const [activeTab, setActiveTab] = React.useState<number | null>(null);
   const [activeTabs, setActiveTabs] = React.useState<TabList[]>([]);
   const [tabs, setTabs] = React.useState<TabList[]>(tabsList);
-  const [ActivePage, setActivePage] = React.useState();
+  const [ActivePage, setActivePage] = React.useState<string | null>(null);
 
   const handleTabClick = (item: TabList, i: number, e?: any) => {
     tabs[i].isFolderOpen = !tabs[i].isFolderOpen;
@@ -58,15 +58,15 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
 
   const handleFileClick = (item: TabList, index: number, subIndex?: number) => {
     if (activeTabs.find((t) => t.label === item.label)) {
-      setActivePage(item.page);
+      setActivePage(item.label);
       return;
     }
     setActiveTabs((prev) => [...prev, item]);
-    setActivePage(item.page);
+    setActivePage(item.label);
   };
 
   const handleChangeTab = (item: TabList) => {
-    setActivePage(item.page);
+    setActivePage(item.label);
   };
 
   const handleCloseFile = (item: TabList) => {
@@ -83,9 +83,9 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
       }
     }
     if (toSetActive !== null) {
-      setActivePage(activeTabs[toSetActive].page);
+      setActivePage(activeTabs[toSetActive].label);
     } else {
-      setActivePage(undefined);
+      setActivePage(null);
     }
   };
 

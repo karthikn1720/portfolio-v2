@@ -22,8 +22,16 @@ body {
   height: 100%;
 }
 
+.h100v-100 {
+  height: calc(100vh - 100px);
+}
+
 .h250px {
   height: 250px;
+}
+
+.h100px {
+  height: 100px;
 }
 
 .h40px {
@@ -37,7 +45,12 @@ body {
 .w100v {
   width: 100vw;
 }
-
+.w300px {
+  width: 300px;
+}
+.w100px {
+  width: 100px;
+}
 .h100v {
   height: 100vh;
 }
@@ -53,6 +66,9 @@ body {
 
 .pad-lr-20 {
   padding: 0 20px;
+}
+.pad-lr-70 {
+  padding: 0 70px;
 }
 
 .b-right {
@@ -97,6 +113,13 @@ body {
 
 .p-bottom-50 {
   padding-bottom: 50px;
+}
+.p-bottom-40 {
+  padding-bottom: 40px;
+}
+
+.w500px {
+  width: 500px;
 }
 
 //flex
@@ -183,6 +206,10 @@ body {
   font-size: 16px;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .pad-lr-10 {
   padding: 0 10px;
 }
@@ -240,9 +267,40 @@ code {
   //   letter-spacing: 0.00938em !important;
 }
 
+.scroll-bar::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+  height: 5px;
+}
+
+.scroll-bar-width-5 {
+  width: 5px;
+  height: 5px;
+}
+/* Thumb */
+.scroll-bar::-webkit-scrollbar-thumb {
+  background: #9b5a5a !important; /* Color of the thumb */
+  border-radius: 5px;
+}
+
+/* Track */
+.scroll-bar::-webkit-scrollbar-track {
+  background: transparent; /* Color of the track */
+}
+
+/* Buttons (arrows) */
+.scroll-bar::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar buttons */
+}
+
+.scroll-bar::-webkit-scrollbar-corner {
+  background: transparent; /* Change to the desired background color */
+}
+
 .code-wrap {
   padding: 5px;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .overflow-h {
@@ -250,7 +308,7 @@ code {
 }
 
 .overflow-s {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .curson-p {
@@ -260,4 +318,8 @@ code {
 .skill-logo {
   width: 60px;
   height: 60px;
+  > svg {
+    width: 60px;
+    height: 60px;
+  }
 }

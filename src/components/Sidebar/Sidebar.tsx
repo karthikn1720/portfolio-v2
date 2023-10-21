@@ -21,7 +21,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h100 flex p-fixed w250px outline">
+    <div className="h100v-100 flex p-fixed w250px outline">
       <div className="w50px g20px aic pad-t-20px flex-d-c flex h100 outline">
         <ProfessionalInfoIcon className="curson-p sidebar-icon color-active" />
         <PersonalInfoIcon className="curson-p sidebar-icon color-active" />

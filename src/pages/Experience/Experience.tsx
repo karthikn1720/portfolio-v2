@@ -40,7 +40,7 @@ export default Experience;`;
 const Experience = () => {
   return (
     <div className="flex h100">
-      <div className="flex-1 overflow-s">
+      <div className="flex-1 overflow-s scroll-bar">
         <CodeHighlight showNumbers language="jsx">
           {code}
         </CodeHighlight>
