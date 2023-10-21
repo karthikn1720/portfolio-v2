@@ -8,6 +8,7 @@ interface TabList {
   isFile?: boolean;
   page?: any;
 }
+//
 
 interface UseTabReturn {
   activeTab: number | null;
