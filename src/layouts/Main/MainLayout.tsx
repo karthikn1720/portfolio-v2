@@ -1,5 +1,3 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
 import Header from "../../components/Header.tsx/Header";
 import Footer from "components/Footer/Footer";
 import Sidebar from "components/Sidebar/Sidebar";
@@ -8,7 +6,6 @@ import { ReactComponent as GreenFolder } from "assets/green-folder.svg";
 import { ReactComponent as OrangeFolder } from "assets/orange-folder.svg";
 import { ReactComponent as BlueFolder } from "assets/blue-folder.svg";
 import { TabProvider, useTab } from "hooks/useTab";
-import Hello from "pages/Hello/Hello";
 import AboutMe from "pages/about-me/AboutMe";
 import Education from "pages/education/Education";
 import Experience from "pages/Experience/Experience";

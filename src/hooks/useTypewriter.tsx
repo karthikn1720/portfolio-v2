@@ -40,6 +40,7 @@ const useTypewriter = (text: string, { speed = 50, infinite = false }) => {
     return () => {
       clearInterval(typingInterval);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text, speed]);
 
   return displayText;

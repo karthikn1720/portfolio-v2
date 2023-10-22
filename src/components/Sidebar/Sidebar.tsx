@@ -1,19 +1,14 @@
-import React, { useState } from "react";
 import { ReactComponent as ProfessionalInfoIcon } from "assets/professional-info-icon.svg";
 import { ReactComponent as PersonalInfoIcon } from "assets/personal-info-icon.svg";
 import { ReactComponent as HobbiesIcon } from "assets/hobbies-icon.svg";
 import { ReactComponent as ArrowIcon } from "assets/arrow.svg";
 import { ReactComponent as ArrowSmallIcon } from "assets/arrow2.svg";
-import { ReactComponent as GreenFolder } from "assets/green-folder.svg";
-import { ReactComponent as OrangeFolder } from "assets/orange-folder.svg";
-import { ReactComponent as BlueFolder } from "assets/blue-folder.svg";
 import { ReactComponent as File } from "assets/File.svg";
 import Text from "design/Text/Text";
 import { useTabContext } from "hooks/useTab";
 
 const Sidebar = () => {
   const { tabsList, handleTabClick, handleFileClick } = useTabContext();
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleClick = (item: any, i: number) => {
     console.log("clicked");

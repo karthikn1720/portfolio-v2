@@ -1,7 +1,5 @@
-import { Color, Typography, TypographyProps } from "@mui/material";
-import React from "react";
+import { Typography, TypographyProps } from "@mui/material";
 import "./text.scss";
-import { Variant } from "@mui/material/styles/createTypography";
 // export type TextProps = TypographyProps;
 /**
  * This is a simple wrapper component for the Mui Typography component. It just

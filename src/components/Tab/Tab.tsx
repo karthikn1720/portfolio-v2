@@ -3,8 +3,7 @@ import { useTabContext } from "hooks/useTab";
 import React from "react";
 
 const Tab = () => {
-  const { tabsList, activeTabs, handleCloseFile, handleChangeTab } =
-    useTabContext();
+  const { activeTabs, handleCloseFile, handleChangeTab } = useTabContext();
 
   return (
     <div className="tab-container outline h35px flex overflow-s no-wrap">
