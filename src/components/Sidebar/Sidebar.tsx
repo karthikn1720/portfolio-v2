@@ -34,7 +34,7 @@ const Sidebar = () => {
             return (
               <div className="" key={index}>
                 <div
-                  className="flex aic g10px"
+                  className="flex curson-p aic g10px"
                   onClick={() => handleClick(item, index)}
                 >
                   <ArrowSmallIcon
@@ -53,7 +53,7 @@ const Sidebar = () => {
                           onClick={() =>
                             handleFileClick(subItem, index, subIndex)
                           }
-                          className="flex aic g10px"
+                          className="flex aic g10px curson-p"
                           key={`${index}-${subIndex}`}
                         >
                           <File />
