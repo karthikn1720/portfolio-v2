@@ -2,7 +2,7 @@ import React from "react";
 import "./loading.scss";
 const Loading = () => {
   const [state, setState] = React.useState<string | undefined>(undefined);
-
+  //
   React.useEffect(() => {
     setTimeout(() => {
       setState("trigger-animation");
