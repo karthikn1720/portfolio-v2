@@ -10,6 +10,7 @@ import AboutMe from "pages/about-me/AboutMe";
 import Education from "pages/education/Education";
 import Experience from "pages/Experience/Experience";
 import Skills from "pages/skills/Skills";
+import Hello from "pages/Hello/Hello";
 
 const sidebarItems = [
   {
@@ -47,7 +48,7 @@ const MainLayout = () => {
         <div className="w100 h100 pad-l-250px p-bottom-40 bg-primary">
           <Tab></Tab>
           <div className="page overflow-s scroll-bar h100">
-            {pages[ActivePage]}
+            {ActivePage ? pages[ActivePage] : <Hello />}
           </div>
         </div>
         <Footer />
