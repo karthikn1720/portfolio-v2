@@ -36,7 +36,6 @@ const Sidebar = () => {
                 <div
                   className="flex curson-p aic g10px"
                   onClick={() => handleClick(item, index)}
-                  onTouchEnd={() => handleClick(item, index)}
                 >
                   <ArrowSmallIcon
                     className={item.isFolderOpen ? "rotate-90" : undefined}
@@ -51,7 +50,6 @@ const Sidebar = () => {
                     {item.subItem.map((subItem, subIndex) => {
                       return (
                         <div
-                          onTouchEnd={() => handleClick(item, index)}
                           onClick={() =>
                             handleFileClick(subItem, index, subIndex)
                           }
