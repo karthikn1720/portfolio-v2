@@ -23,7 +23,7 @@ body {
 }
 
 .h100v-100 {
-  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
 }
 
 .h250px {
@@ -43,7 +43,7 @@ body {
 }
 
 .w100v {
-  width: 100vw;
+  width: 100dvw;
 }
 .w300px {
   width: 300px;
@@ -52,7 +52,7 @@ body {
   width: 100px;
 }
 .h100v {
-  height: 100vh;
+  height: 100dvh;
 }
 
 .center {
