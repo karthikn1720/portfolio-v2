@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: '18.x'
 
-      # Install dependencies
+      # Install dependencies 
       - name: Install dependencies
         run: yarn install --prefer-offline
 
