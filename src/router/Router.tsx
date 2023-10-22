@@ -4,7 +4,7 @@ import Loading from "components/Loading/Loading";
 const Router = () => {
   return (
     <div className="routes-root">
-      <Loading />
+      {/* <Loading /> */}
       <MainLayout />
     </div>
   );
