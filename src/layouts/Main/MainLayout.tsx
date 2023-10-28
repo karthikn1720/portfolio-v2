@@ -45,9 +45,9 @@ const MainLayout = () => {
       <div className="p-top-50 p-bottom-50 h100v overflow-h">
         <Header />
         <Sidebar />
-        <div className="w100 h100 pad-l-250px p-bottom-40 bg-primary">
+        <div className="main-screen w100 h100 pad-l-250px bg-primary">
           <Tab></Tab>
-          <div className="page overflow-s scroll-bar h100">
+          <div className="page overflow-s scroll-bar">
             {ActivePage ? pages[ActivePage] : <Hello />}
           </div>
         </div>

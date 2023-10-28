@@ -3,7 +3,7 @@ import "./header.scss";
 import Text from "design/Text/Text";
 const Header = () => {
   return (
-    <div className="header-container">
+    <div className="header-container border">
       <div className="left h100">
         <div className="flex center h100 w250px pad-lf-20 b-right">
           <Text color="inactive">Karthik</Text>

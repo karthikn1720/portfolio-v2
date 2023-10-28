@@ -16,8 +16,8 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="h100v-100 flex p-fixed w250px outline">
-      <div className="w50px g20px aic pad-t-20px flex-d-c flex h100 outline">
+    <div className="h100v-100 flex p-fixed w250px">
+      <div className="sidebar-wrapper w50px  g20px aic pad-t-20px flex-d-c flex h100">
         <ProfessionalInfoIcon className="curson-p sidebar-icon color-active" />
         <PersonalInfoIcon className="curson-p sidebar-icon color-active" />
         <HobbiesIcon className="curson-p sidebar-icon color-active" />
@@ -29,7 +29,7 @@ const Sidebar = () => {
             Personal Info
           </Text>
         </div>
-        <div className="h100 pad-l-10">
+        <div className="h100-35px pad-l-10">
           {tabsList.map((item, index) => {
             return (
               <div className="" key={index}>

@@ -5,7 +5,7 @@ import "./hello.scss";
 
 const Hello = () => {
   return (
-    <div className=" h100 w100 flex center border overflow-h">
+    <div className=" h100 w100 flex center overflow-h">
       <div className="flex aic g20px">
         <div className="flex-1">
           <Text type="active">Hi all, I am</Text>

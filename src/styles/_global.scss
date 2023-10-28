@@ -75,6 +75,14 @@ body {
   border-right: 1px solid $border-color;
 }
 
+.border-right {
+  border-right: 1px solid $border-color;
+}
+
+.border {
+  border-right: 1px solid $border-color;
+}
+
 .b-left {
   border-left: 1px solid $border-color;
 }
@@ -104,7 +112,7 @@ body {
 }
 
 .outline {
-  outline: 1px solid $border-color;
+  box-shadow: 0 0 0 1px $border-color;
 }
 
 .p-top-50 {
@@ -322,4 +330,23 @@ code {
     width: 60px;
     height: 60px;
   }
+}
+
+.page {
+  height: calc(100% - 35px);
+  border-top: 1px solid $border-color;
+}
+
+.sidebar-wrapper {
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+.main-screen {
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+.active-tab-button {
+  border-bottom: 3px solid $border-color;
 }

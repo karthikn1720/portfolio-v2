@@ -3,7 +3,7 @@ import "./footer.scss";
 import Text from "design/Text/Text";
 const Footer = () => {
   return (
-    <div className="footer-container outline jcsb w100 flex">
+    <div className="footer-container border jcsb w100 flex">
       <div className="flex center h100">
         <div className="flex outline h100 center pad-lf-20">
           <Text color="inactive">Find me in: </Text>

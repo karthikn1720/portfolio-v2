@@ -3,15 +3,19 @@ import { useTabContext } from "hooks/useTab";
 import React from "react";
 
 const Tab = () => {
-  const { activeTabs, handleCloseFile, handleChangeTab } = useTabContext();
+  const { activeTabs, ActivePage, handleCloseFile, handleChangeTab } =
+    useTabContext();
 
   return (
-    <div className="tab-container outline h35px flex overflow-s no-wrap">
+    <div className="tab-container border-right h35px flex overflow-s no-wrap">
       {activeTabs.map((tab, i) => {
+        console.log(tab.label === ActivePage);
         return (
           <div
             key={i}
-            className="curson-p tab w-max h100 g20px flex b-right pad-lr-20 center"
+            className={`curson-p ${
+              tab.label === ActivePage ? "active-tab-button" : ""
+            }  tab w-max h100 g20px flex b-right pad-lr-20 center`}
           >
             <Text onClick={() => handleChangeTab(tab)}>{tab.label}</Text>
             <button
