@@ -45,13 +45,13 @@ const Skills = () => {
         language="javascript"
       />
       <Skill
-        name="Postgres SQL"
+        name="PGSQL"
         logo={<PostgresLogo />}
         code={sqlCode}
         language="sql"
       />
       <Skill
-        name="Mongo DB"
+        name="Mongo"
         logo={<MongodbLogo />}
         code={mongodbCode}
         language="json"

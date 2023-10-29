@@ -14,12 +14,12 @@ const Skill = ({ logo, code, name, language }: SkillWrapper) => {
     speed: 10,
   });
   return (
-    <div className="skill-1 flex-d-c-mobile flex aic g20px jcsb h100px pad-lr-70">
-      <div className="skill-wrap flex flex-d-c g10px">
+    <div className="skill-1 flex-d-c-mobile flex aic g20px jcsb pad-lr-70">
+      <div className="skill-wrap flex aic flex-d-c g10px">
         <div className="skill-logo">{logo}</div>
         <Text>{name}</Text>
       </div>
-      <div className="skill-text bg-black h100px w500px code-wrap scroll-bar">
+      <div className="skill-text bg-black h100px w500px hide-mobile code-wrap scroll-bar">
         <CodeHighlight fontSize="10px" language={language}>
           {typeWriter}
         </CodeHighlight>
