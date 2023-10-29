@@ -19,10 +19,6 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
     handleTabClick(item, i);
   };
 
-  const handleSidebarShow = () => {
-    setShowSidebar((prev: boolean) => !prev);
-  };
-
   return (
     <div className="sidebar-container h100v-100 flex">
       <div className="sidebar-small-wrapper hide-mobile w50px jcsb g20px aic pad-t-20px flex-d-c flex h100">
