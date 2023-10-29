@@ -6,23 +6,43 @@ import { ReactComponent as ArrowSmallIcon } from "assets/arrow2.svg";
 import { ReactComponent as File } from "assets/File.svg";
 import Text from "design/Text/Text";
 import { useTabContext } from "hooks/useTab";
+import React from "react";
 
 const Sidebar = () => {
   const { tabsList, handleTabClick, handleFileClick } = useTabContext();
-
+  const [showSidebar, setShowSidebar] = React.useState(false);
   const handleClick = (item: any, i: number) => {
-    console.log("clicked");
     handleTabClick(item, i);
   };
 
+  const handleSidebarShow = () => {
+    setShowSidebar((prev) => !prev);
+  };
+
   return (
-    <div className="h100v-100 flex p-fixed w250px">
-      <div className="sidebar-wrapper w50px  g20px aic pad-t-20px flex-d-c flex h100">
-        <ProfessionalInfoIcon className="curson-p sidebar-icon color-active" />
-        <PersonalInfoIcon className="curson-p sidebar-icon color-active" />
-        <HobbiesIcon className="curson-p sidebar-icon color-active" />
+    <div className="sidebar-container h100v-100 flex">
+      <div className="sidebar-small-wrapper w50px jcsb g20px aic pad-t-20px flex-d-c flex h100">
+        <div className="sidebar-small-icon-wrapper hide-mobile flex flex-d-c">
+          <ProfessionalInfoIcon className="curson-p sidebar-icon color-active" />
+          <PersonalInfoIcon className="curson-p sidebar-icon color-active" />
+          <HobbiesIcon className="curson-p sidebar-icon color-active" />
+        </div>
+        <div
+          className={`sidebar-close-button show-mobile flex aic jcc ${
+            !showSidebar ? "rotate-270" : "rotate-90"
+          }`}
+        >
+          <ArrowIcon
+            onClick={handleSidebarShow}
+            className="sidebar-icon-main"
+          />
+        </div>
       </div>
-      <div className=" outline w100">
+      <div
+        className={`sidebar-main-wrapper ${
+          !showSidebar ? "hide-mobile" : ""
+        } outline w100`}
+      >
         <div className="h35px w100 flex g10px aic pad-lr-10 outline">
           <ArrowIcon />
           <Text className="curson-p" type="active">
@@ -50,9 +70,10 @@ const Sidebar = () => {
                     {item.subItem.map((subItem, subIndex) => {
                       return (
                         <div
-                          onClick={() =>
-                            handleFileClick(subItem, index, subIndex)
-                          }
+                          onClick={() => {
+                            setShowSidebar(false);
+                            handleFileClick(subItem, index, subIndex);
+                          }}
                           className="flex aic g10px curson-p"
                           key={`${index}-${subIndex}`}
                         >

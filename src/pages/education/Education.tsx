@@ -48,7 +48,7 @@ export default Education;`;
 
 const Education = () => {
   return (
-    <div className="flex h100">
+    <div className="flex flex-d-c-mobile-rev h100">
       <div className="flex-1 overflow-s scroll-bar">
         <CodeHighlight showNumbers language="jsx">
           {code}

@@ -14,7 +14,7 @@ const Skill = ({ logo, code, name, language }: SkillWrapper) => {
     speed: 10,
   });
   return (
-    <div className="skill-1 flex aic g20px jcsb h100px pad-lr-70">
+    <div className="skill-1 flex-d-c-mobile flex aic g20px jcsb h100px pad-lr-70">
       <div className="skill-wrap flex flex-d-c g10px">
         <div className="skill-logo">{logo}</div>
         <Text>{name}</Text>

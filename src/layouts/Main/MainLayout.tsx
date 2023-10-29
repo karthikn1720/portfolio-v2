@@ -44,11 +44,13 @@ const MainLayout = () => {
     <TabProvider tabs={tabs}>
       <div className="p-top-50 p-bottom-50 h100v overflow-h">
         <Header />
-        <Sidebar />
-        <div className="main-screen w100 h100 pad-l-250px bg-primary">
-          <Tab></Tab>
-          <div className="page overflow-s scroll-bar">
-            {ActivePage ? pages[ActivePage] : <Hello />}
+        <div className="wrap-sidebar-and-main flex">
+          <Sidebar />
+          <div className="main-screen w100 bg-primary">
+            <Tab></Tab>
+            <div className="page overflow-s scroll-bar">
+              {ActivePage ? pages[ActivePage] : <Hello />}
+            </div>
           </div>
         </div>
         <Footer />

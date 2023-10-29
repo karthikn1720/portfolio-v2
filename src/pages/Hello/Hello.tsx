@@ -14,7 +14,7 @@ const Hello = () => {
           </Text>
           <Text fontSize={32} color="#4D5BCE">{`> Full-stack developer`}</Text>
         </div>
-        <div className="code-wrapper flex flex-d-c g20px flex-1">
+        <div className="code-wrapper hide-mobile flex flex-d-c g20px flex-1">
           {[1, 2, 3, 4, 5].map((ele) => {
             return (
               <div

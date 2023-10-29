@@ -1,6 +1,5 @@
 import Text from "design/Text/Text";
 import { useTabContext } from "hooks/useTab";
-import React from "react";
 
 const Tab = () => {
   const { activeTabs, ActivePage, handleCloseFile, handleChangeTab } =
@@ -9,7 +8,6 @@ const Tab = () => {
   return (
     <div className="tab-container border-right h35px flex overflow-s no-wrap">
       {activeTabs.map((tab, i) => {
-        console.log(tab.label === ActivePage);
         return (
           <div
             key={i}
