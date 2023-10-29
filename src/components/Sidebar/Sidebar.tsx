@@ -8,42 +8,32 @@ import Text from "design/Text/Text";
 import { useTabContext } from "hooks/useTab";
 import React from "react";
 
-const Sidebar = () => {
+interface SidebarProps {
+  showSidebar: boolean;
+  setShowSidebar: React.Dispatch<any>;
+}
+
+const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
   const { tabsList, handleTabClick, handleFileClick } = useTabContext();
-  const [showSidebar, setShowSidebar] = React.useState(false);
   const handleClick = (item: any, i: number) => {
     handleTabClick(item, i);
   };
 
   const handleSidebarShow = () => {
-    setShowSidebar((prev) => !prev);
+    setShowSidebar((prev: boolean) => !prev);
   };
 
   return (
     <div className="sidebar-container h100v-100 flex">
-      <div className="sidebar-small-wrapper w50px jcsb g20px aic pad-t-20px flex-d-c flex h100">
-        <div className="sidebar-small-icon-wrapper hide-mobile flex flex-d-c">
+      <div className="sidebar-small-wrapper hide-mobile w50px jcsb g20px aic pad-t-20px flex-d-c flex h100">
+        <div className="sidebar-small-icon-wrapper flex flex-d-c">
           <ProfessionalInfoIcon className="curson-p sidebar-icon color-active" />
           <PersonalInfoIcon className="curson-p sidebar-icon color-active" />
           <HobbiesIcon className="curson-p sidebar-icon color-active" />
         </div>
-        <div
-          className={`sidebar-close-button show-mobile flex aic jcc ${
-            !showSidebar ? "rotate-270" : "rotate-90"
-          }`}
-        >
-          <ArrowIcon
-            onClick={handleSidebarShow}
-            className="sidebar-icon-main"
-          />
-        </div>
       </div>
-      <div
-        className={`sidebar-main-wrapper ${
-          !showSidebar ? "hide-mobile" : ""
-        } outline w100`}
-      >
-        <div className="h35px w100 flex g10px aic pad-lr-10 outline">
+      <div className={`sidebar-main-wrapper ${!showSidebar ? "hide" : ""}`}>
+        <div className="h35px w100 flex g10px aic pad-lr-10 b-bottom">
           <ArrowIcon />
           <Text className="curson-p" type="active">
             Personal Info

@@ -11,6 +11,7 @@ import Education from "pages/education/Education";
 import Experience from "pages/Experience/Experience";
 import Skills from "pages/skills/Skills";
 import Hello from "pages/Hello/Hello";
+import React from "react";
 
 const sidebarItems = [
   {
@@ -38,14 +39,15 @@ const pages: any = {
 };
 
 const MainLayout = () => {
+  const [showSidebar, setShowSidebar] = React.useState(false);
   const tabs = useTab({ tabsList: sidebarItems });
   const { ActivePage } = tabs;
   return (
     <TabProvider tabs={tabs}>
       <div className="p-top-50 p-bottom-50 h100v overflow-h">
-        <Header />
+        <Header showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
         <div className="wrap-sidebar-and-main flex">
-          <Sidebar />
+          <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
           <div className="main-screen w100 bg-primary">
             <Tab></Tab>
             <div className="page overflow-s scroll-bar">

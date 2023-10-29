@@ -319,6 +319,10 @@ code {
   overflow: auto;
 }
 
+.float-right {
+  float: right;
+}
+
 .curson-p {
   cursor: pointer;
 }
@@ -341,13 +345,27 @@ code {
   border-top: 1px solid $border-color;
 }
 
+.menu-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.menu-icon-wrapper {
+  width: 50px;
+}
+
+.w200px {
+  width: 200px;
+}
+
 .sidebar-small-wrapper {
   border-left: 1px solid $border-color;
   border-right: 1px solid $border-color;
 }
 
 .main-screen {
-  width: calc(100% - 50px);
+  // width: calc(100% - 50px);
+  overflow: auto;
   border-left: 1px solid $border-color;
   border-right: 1px solid $border-color;
 }

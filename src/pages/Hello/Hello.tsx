@@ -6,7 +6,7 @@ import "./hello.scss";
 const Hello = () => {
   return (
     <div className=" h100 w100 flex center overflow-h">
-      <div className="flex aic g20px">
+      <div className="flex aic pad-lf-20 g20px">
         <div className="flex-1">
           <Text type="active">Hi all, I am</Text>
           <Text fontSize={62} type="active">

@@ -5,12 +5,12 @@ const AboutMe = () => {
   return (
     <CodeHighlight showNumbers>
       {`/**
- * About me
- * I have 2 years of еxperience in web
- * development lorem ipsum dolor sit amet,
- * consectetur adipiscing elit, sed do eiusmod
- * tempor incididunt ut labore et dolore
- * magna aliqua. Ut enim ad minim
+ * Experienced Full Stack Developer with over 2.5 years of 
+ * hands-on expertise in web development. 
+ * Proficient in React and Node.js. 
+ * I am dedicated to delivering high-quality,
+ * efficient, and scalable solutions. 
+ * I thrive on solving complex challenges and exceeding client expectations.
  */
 const sayHello = "hello";
 console.log(sayHello);`}
