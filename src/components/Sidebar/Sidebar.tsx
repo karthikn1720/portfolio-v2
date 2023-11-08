@@ -15,8 +15,14 @@ interface SidebarProps {
 
 const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
   const { tabsList, handleTabClick, handleFileClick } = useTabContext();
-  const handleClick = (item: any, i: number) => {
-    handleTabClick(item, i);
+  const handleClick = (item: any, i: number, i2: number) => {
+    handleTabClick(item, i, i2);
+  };
+
+  console.log(tabsList);
+
+  const handleBlogClick = (sItem: any, index: number, index2: number) => {
+    handleFileClick(sItem, index, index2);
   };
 
   return (
@@ -29,53 +35,71 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
         </div>
       </div>
       <div className={`sidebar-main-wrapper ${!showSidebar ? "hide" : ""}`}>
-        <div className="h35px w100 flex g10px aic pad-lr-10 b-bottom">
-          <ArrowIcon />
-          <Text className="curson-p" type="active">
-            Personal Info
-          </Text>
-        </div>
-        <div className="h100-35px pad-l-10">
-          {tabsList.map((item, index) => {
-            return (
-              <div className="" key={index}>
-                <div
-                  className="flex curson-p aic g10px"
-                  onClick={() => handleClick(item, index)}
-                >
-                  <ArrowSmallIcon
-                    className={item.isFolderOpen ? "rotate-90" : undefined}
-                  />
-                  {item.icon}
-                  <Text className="curson-p" type="active">
-                    {item.label}
-                  </Text>
-                </div>
-                {item.subItem && item.isFolderOpen && (
-                  <div className=" pad-l-20 aic">
-                    {item.subItem.map((subItem, subIndex) => {
-                      return (
-                        <div
-                          onClick={() => {
-                            setShowSidebar(false);
-                            handleFileClick(subItem, index, subIndex);
-                          }}
-                          className="flex aic g10px curson-p"
-                          key={`${index}-${subIndex}`}
-                        >
-                          <File />
-                          <Text className="curson-p" type="active">
-                            {subItem.label}
-                          </Text>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+        {tabsList.map((item, index) => {
+          return (
+            <div className="">
+              <div className="h35px w100 flex g10px aic pad-lr-10 b-bottom b-top">
+                <ArrowIcon />
+                <Text className="curson-p" type="active">
+                  {item.label}
+                </Text>
               </div>
-            );
-          })}
-        </div>
+              <div className="h100-35px pad-l-10">
+                {item?.item?.map((sItem, index2) => {
+                  console.log(sItem.isFile);
+                  return (
+                    <div className="" key={index2}>
+                      <div
+                        className="flex curson-p aic g10px"
+                        onClick={() =>
+                          sItem.isFile
+                            ? handleBlogClick(sItem, index, index2)
+                            : handleClick(sItem, index, index2)
+                        }
+                      >
+                        {!sItem.isFile ? (
+                          <ArrowSmallIcon
+                            className={
+                              sItem.isFolderOpen ? "rotate-90" : undefined
+                            }
+                          />
+                        ) : (
+                          <File />
+                        )}
+
+                        {sItem.icon}
+                        <Text className="curson-p" type="active">
+                          {sItem.label}
+                        </Text>
+                      </div>
+                      {sItem.subItem && sItem.isFolderOpen && (
+                        <div className=" pad-l-20 aic">
+                          {sItem.subItem.map((subItem, subIndex) => {
+                            return (
+                              <div
+                                onClick={() => {
+                                  setShowSidebar(false);
+                                  handleFileClick(subItem, index, subIndex);
+                                }}
+                                className="flex aic g10px curson-p"
+                                key={`${index}-${subIndex}`}
+                              >
+                                <File />
+                                <Text className="curson-p" type="active">
+                                  {subItem.label}
+                                </Text>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

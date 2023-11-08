@@ -5,7 +5,7 @@ const AboutMe = () => {
   return (
     <CodeHighlight showNumbers>
       {`/**
- * Experienced Full Stack Developer with over 2.5 years of 
+ * Experienced Full Stack Developer with
  * hands-on expertise in web development. 
  * Proficient in React and Node.js. 
  * I am dedicated to delivering high-quality,

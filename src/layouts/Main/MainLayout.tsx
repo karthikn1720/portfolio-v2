@@ -12,8 +12,11 @@ import Experience from "pages/Experience/Experience";
 import Skills from "pages/skills/Skills";
 import Hello from "pages/Hello/Hello";
 import React from "react";
+import CreateBlog from "pages/blog/CreateBlog";
+import Blogs from "pages/blog/Blogs";
+import { getAllBlogs } from "api/blog";
 
-const sidebarItems = [
+const personalInfoItems = [
   {
     label: "bio",
     icon: <BlueFolder />,
@@ -29,6 +32,11 @@ const sidebarItems = [
     icon: <GreenFolder />,
     subItem: [{ label: "Education.js" }],
   },
+  {
+    label: "createBlog",
+    icon: <GreenFolder />,
+    subItem: [{ label: "create-blog" }, { label: "blogs" }],
+  },
 ];
 
 const pages: any = {
@@ -36,12 +44,44 @@ const pages: any = {
   "Skills.js": <Skills />,
   "Experience.js": <Experience />,
   "Education.js": <Education />,
+  "create-blog": <CreateBlog />,
+  blogs: <Blogs />,
 };
 
 const MainLayout = () => {
+  const [data, setData] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    getAllBlogs().then((res) => {
+      console.log(res.data);
+      setData(
+        res.data?.map((item: any) => {
+          console.log(item.title);
+          return { label: item.title, id: item.id, isFile: true };
+        })
+      );
+    });
+  }, []);
+
+  const sidebarItems = [
+    {
+      label: "Personal Info",
+      item: personalInfoItems,
+    },
+    {
+      label: "Blogs",
+      item: data,
+    },
+  ];
   const [showSidebar, setShowSidebar] = React.useState(false);
   const tabs = useTab({ tabsList: sidebarItems });
+
+  React.useEffect(() => {
+    tabs.setTabs(sidebarItems);
+  }, [data]);
+
   const { ActivePage } = tabs;
+  console.log(ActivePage);
   return (
     <TabProvider tabs={tabs}>
       <div className="p-top-50 p-bottom-50 h100v overflow-h">
