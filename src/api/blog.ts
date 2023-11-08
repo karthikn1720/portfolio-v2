@@ -1,14 +1,19 @@
 import axios from "axios"
 
-const postBlog = (data: string) => {
-
+interface PostBlogProps {
+    content: string,
+    title: string
 }
 
-const updateBlog = async (data: string) => {
+// const postBlog = (data: string) => {
+
+// }
+
+const postBlog = async ({ title, content }: PostBlogProps) => {
 
     const payload = {
-        title: 'Test post',
-        content: data,
+        title: title,
+        content: content,
         name: 'karthik',
         createdAt: '2023-11-07'
     }
@@ -17,12 +22,17 @@ const updateBlog = async (data: string) => {
 }
 
 const getAllBlogs = async () => {
-    const res = axios.get('http://localhost:3002/blogs')
+    const res = await axios.get('http://localhost:3002/blogs')
     return res;
+}
+
+const getBlog = async (id: string | number) => {
+    const res = await axios.get(`http://localhost:3002/blogs/${id}`)
+    return res.data
 }
 
 export {
     postBlog,
-    updateBlog,
-    getAllBlogs
+    getAllBlogs,
+    getBlog
 }

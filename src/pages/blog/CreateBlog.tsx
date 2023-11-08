@@ -1,14 +1,19 @@
-import { updateBlog } from "api/blog";
+import { postBlog } from "api/blog";
 import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 const CreateBlog = () => {
   const [value, setValue] = React.useState("");
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
   const editorRef = useRef<any>(null);
   const submit = async () => {
     if (editorRef.current) {
-      const data = editorRef.current.getContent();
-      await updateBlog(data);
+      const payload = {
+        content: editorRef.current.getContent(),
+        title: value,
+      };
+      await postBlog(payload);
+      setIsSubmitted(true);
     }
   };
 
@@ -51,7 +56,15 @@ const CreateBlog = () => {
             "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         }}
       />
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        name="Title"
+        className="border"
+      />
       <button onClick={submit}>Submit</button>
+      {isSubmitted && <span>Submitted successfully</span>}
     </div>
   );
 };

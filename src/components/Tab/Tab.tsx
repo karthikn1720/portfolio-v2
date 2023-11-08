@@ -12,7 +12,7 @@ const Tab = () => {
           <div
             key={i}
             className={`curson-p ${
-              tab.label === ActivePage ? "active-tab-button" : ""
+              tab.label === ActivePage?.label ? "active-tab-button" : ""
             }  tab w-max h100 g20px flex b-right pad-lr-20 center`}
           >
             <Text onClick={() => handleChangeTab(tab)}>{tab.label}</Text>

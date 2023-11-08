@@ -13,6 +13,8 @@ interface SubItem {
   isFolderOpen?: boolean;
   isFile?: boolean;
   page?: any;
+  isBlog?: boolean;
+  id?: string | number;
 }
 //
 
@@ -25,7 +27,7 @@ interface UseTabReturn {
   handleFileClick: any;
   handleChangeTab: (item: TabList) => void;
   handleCloseFile: (item: TabList) => void;
-  ActivePage: any;
+  ActivePage: SubItem | null;
   setTabs: any;
 }
 
@@ -57,7 +59,7 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
   const [activeTab, setActiveTab] = React.useState<number | null>(null);
   const [activeTabs, setActiveTabs] = React.useState<TabList[]>([]);
   const [tabs, setTabs] = React.useState<TabList[]>(tabsList);
-  const [ActivePage, setActivePage] = React.useState<string | null>(null);
+  const [ActivePage, setActivePage] = React.useState<SubItem | null>(null);
 
   const handleTabClick = (item: TabList, i: number, i2: number, e?: any) => {
     console.log(item);
@@ -67,15 +69,15 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
 
   const handleFileClick = (item: TabList, index: number, subIndex?: number) => {
     if (activeTabs.find((t) => t.label === item.label)) {
-      setActivePage(item.label);
+      setActivePage(item);
       return;
     }
     setActiveTabs((prev) => [...prev, item]);
-    setActivePage(item.label);
+    setActivePage(item);
   };
 
   const handleChangeTab = (item: TabList) => {
-    setActivePage(item.label);
+    setActivePage(item);
   };
 
   const handleCloseFile = (item: TabList) => {
@@ -92,7 +94,7 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
       }
     }
     if (toSetActive !== null) {
-      setActivePage(activeTabs[toSetActive].label);
+      setActivePage(activeTabs[toSetActive]);
     } else {
       setActivePage(null);
     }

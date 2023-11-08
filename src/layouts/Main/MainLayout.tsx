@@ -15,27 +15,28 @@ import React from "react";
 import CreateBlog from "pages/blog/CreateBlog";
 import Blogs from "pages/blog/Blogs";
 import { getAllBlogs } from "api/blog";
+import Blog from "pages/blog/Blog";
 
 const personalInfoItems = [
   {
     label: "bio",
     icon: <BlueFolder />,
-    subItem: [{ label: "about-me" }],
+    subItem: [{ label: "about-me", id: 900 }],
   },
   {
     label: "experience",
     icon: <OrangeFolder />,
-    subItem: [{ label: "Experience.js" }, { label: "Skills.js" }],
+    subItem: [{ label: "Experience.js" }, { label: "Skills.js", id: 901 }],
   },
   {
     label: "education",
     icon: <GreenFolder />,
-    subItem: [{ label: "Education.js" }],
+    subItem: [{ label: "Education.js", id: 902 }],
   },
   {
     label: "createBlog",
     icon: <GreenFolder />,
-    subItem: [{ label: "create-blog" }, { label: "blogs" }],
+    subItem: [{ label: "create-blog", id: 903 }],
   },
 ];
 
@@ -57,7 +58,7 @@ const MainLayout = () => {
       setData(
         res.data?.map((item: any) => {
           console.log(item.title);
-          return { label: item.title, id: item.id, isFile: true };
+          return { label: item.title, id: item.id, isFile: true, isBlog: true };
         })
       );
     });
@@ -91,7 +92,15 @@ const MainLayout = () => {
           <div className="main-screen w100 bg-primary">
             <Tab></Tab>
             <div className="page overflow-s scroll-bar">
-              {ActivePage ? pages[ActivePage] : <Hello />}
+              {ActivePage ? (
+                ActivePage?.isBlog ? (
+                  <Blog id={ActivePage.id} />
+                ) : (
+                  pages[ActivePage.label]
+                )
+              ) : (
+                <Hello />
+              )}
             </div>
           </div>
         </div>
