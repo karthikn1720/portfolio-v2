@@ -1,10 +1,11 @@
 import { postBlog } from "api/blog";
-import React, { useRef } from "react";
+import React, { ChangeEvent, useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 const CreateBlog = () => {
   const [value, setValue] = React.useState("");
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+
   const editorRef = useRef<any>(null);
   const submit = async () => {
     if (editorRef.current) {
@@ -20,12 +21,13 @@ const CreateBlog = () => {
   return (
     <div className="bg-white h100">
       <Editor
+        onSaveContent={(val) => console.log(val)}
         apiKey={process.env.TINYMCE_API_KEY}
         onInit={(evt, editor) => (editorRef.current = editor)}
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
           height: 500,
-          menubar: false,
+          // menubar: false,
           plugins: [
             "advlist",
             "autolink",
@@ -45,15 +47,15 @@ const CreateBlog = () => {
             "code",
             "help",
             "wordcount",
+            "codesample",
+            "save",
+            "print",
           ],
           toolbar:
             "undo redo | blocks | " +
             "bold italic forecolor | alignleft aligncenter " +
             "alignright alignjustify | bullist numlist outdent indent | " +
-            "removeformat | help | code | image",
-
-          content_style:
-            "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+            "removeformat | help | code | image | codesample | preview | save | print",
         }}
       />
       <input

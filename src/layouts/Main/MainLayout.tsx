@@ -16,6 +16,7 @@ import CreateBlog from "pages/blog/CreateBlog";
 import Blogs from "pages/blog/Blogs";
 import { getAllBlogs } from "api/blog";
 import Blog from "pages/blog/Blog";
+import Blog2 from "pages/blog/Blog2";
 
 const personalInfoItems = [
   {
@@ -36,7 +37,10 @@ const personalInfoItems = [
   {
     label: "createBlog",
     icon: <GreenFolder />,
-    subItem: [{ label: "create-blog", id: 903 }],
+    subItem: [
+      { label: "create-blog", id: 903 },
+      { label: "blogs2", id: 903 },
+    ],
   },
 ];
 
@@ -47,6 +51,7 @@ const pages: any = {
   "Education.js": <Education />,
   "create-blog": <CreateBlog />,
   blogs: <Blogs />,
+  blogs2: <Blog2 />,
 };
 
 const MainLayout = () => {
@@ -68,10 +73,12 @@ const MainLayout = () => {
     {
       label: "Personal Info",
       item: personalInfoItems,
+      isFolderOpen: false,
     },
     {
       label: "Blogs",
       item: data,
+      isFolderOpen: false,
     },
   ];
   const [showSidebar, setShowSidebar] = React.useState(false);

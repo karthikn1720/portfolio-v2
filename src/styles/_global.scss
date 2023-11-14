@@ -8,14 +8,14 @@
 * {
   font-family: "fira-code" !important;
   box-sizing: border-box;
-  margin: 0;
-  border: 0;
-  padding: 0;
-  overscroll-behavior: none;
 }
 
 body {
   background-color: $background-color;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overscroll-behavior: none;
 }
 
 .h100 {
@@ -28,6 +28,10 @@ body {
 
 .h250px {
   height: 250px;
+}
+
+.sidebar-blog-list {
+  height: calc(100% - 250px);
 }
 
 .h100px {
@@ -272,15 +276,15 @@ body {
   border-radius: 15px;
 }
 
-pre,
-code {
-  overflow: unset !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  text-shadow: none !important;
-  z-index: 100;
-  //   letter-spacing: 0.00938em !important;
-}
+// pre,
+// code {
+//   overflow: unset !important;
+//   padding: 0 !important;
+//   margin: 0 !important;
+//   text-shadow: none !important;
+//   z-index: 100;
+//   //   letter-spacing: 0.00938em !important;
+// }
 
 .scroll-bar::-webkit-scrollbar {
   background-color: transparent;
@@ -388,6 +392,7 @@ code {
 .sidebar-main-wrapper {
   width: 200px;
   min-width: 200px;
+  height: 100%;
 }
 
 .sidebar-icon-main {

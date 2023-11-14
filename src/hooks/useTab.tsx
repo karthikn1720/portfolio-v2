@@ -61,9 +61,15 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
   const [tabs, setTabs] = React.useState<TabList[]>(tabsList);
   const [ActivePage, setActivePage] = React.useState<SubItem | null>(null);
 
-  const handleTabClick = (item: TabList, i: number, i2: number, e?: any) => {
+  const handleTabClick = (item: TabList, i: number, i2?: number, e?: any) => {
     console.log(item);
-    tabs[i].item[i2].isFolderOpen = !tabs[i].item[i2].isFolderOpen;
+
+    if (i2 !== undefined) {
+      tabs[i].item[i2].isFolderOpen = !tabs[i].item[i2].isFolderOpen;
+      setTabs([...tabs]);
+      return;
+    }
+    tabs[i].isFolderOpen = !tabs[i].isFolderOpen;
     setTabs([...tabs]);
   };
 
