@@ -448,6 +448,17 @@ a {
     display: block;
   }
 
+  .contact-me-container {
+    height: auto !important;
+  }
+
+  .json-page {
+    > pre,
+    code {
+      font-size: small;
+    }
+  }
+
   // .main-screen {
   //   padding: 0;
   // }

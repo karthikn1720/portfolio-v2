@@ -23,6 +23,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
   //
 
   const handleBlogClick = (sItem: any, index: number, index2: number) => {
+    setShowSidebar(false);
     handleFileClick(sItem, index, index2);
   };
 

@@ -117,7 +117,7 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="contact-me-container">
+    <div className="contact-me-container flex-d-c-mobile">
       <div className="form-page">
         {isLoading && <LoadingScreen>Submitting...</LoadingScreen>}
 

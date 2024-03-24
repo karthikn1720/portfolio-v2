@@ -3,7 +3,6 @@ import "./header.scss";
 import Text from "design/Text/Text";
 import { ReactComponent as MenuIcon } from "assets/menu.svg";
 import { useTabContext } from "hooks/useTab";
-import CodeHighlight from "components/CodeHighlight/CodeHighlight";
 
 interface HeaderProps {
   showSidebar: boolean;
@@ -41,11 +40,7 @@ const Header = ({ setShowSidebar }: HeaderProps) => {
         >
           <Text color="inactive">Karthik</Text>
         </div>
-        <div className="tabs">
-          <CodeHighlight>
-            {`// NOTE: Site under construction. It is not mobile responsive and forms will not work`}
-          </CodeHighlight>
-        </div>
+        <div className="tabs "></div>
       </div>
       <div className="right h100">
         <div
