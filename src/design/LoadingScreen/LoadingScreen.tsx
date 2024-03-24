@@ -1,4 +1,3 @@
-import { CircularProgress } from "@mui/material";
 import Text from "design/Text/Text";
 import React, { ReactNode } from "react";
 

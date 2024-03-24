@@ -1,5 +1,5 @@
 import { postBlog } from "api/blog";
-import React, { ChangeEvent, useRef } from "react";
+import React, { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
 const CreateBlog = () => {

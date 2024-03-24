@@ -1,9 +1,8 @@
-import { getBlog } from "api/blog";
 import React from "react";
 import "../../styles/vars/prism.css";
 
 const Blog = ({ id }: { id: string | number | undefined }) => {
-  const [data, setData] = React.useState<string>("");
+  const [data] = React.useState<string>("");
   React.useEffect(() => {
     if (!id) return;
     // getBlog(id).then((val) => {

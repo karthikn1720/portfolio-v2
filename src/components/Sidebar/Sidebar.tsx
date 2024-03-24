@@ -7,7 +7,7 @@ import { ReactComponent as File } from "assets/File.svg";
 import Text from "design/Text/Text";
 import { useTabContext } from "hooks/useTab";
 import React from "react";
-import Blog from "pages/blog/Blog";
+// import Blog from "pages/blog/Blog";
 
 interface SidebarProps {
   showSidebar: boolean;

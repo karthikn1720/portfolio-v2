@@ -4,8 +4,7 @@ import Input from "design/Input/Input";
 import { useState } from "react";
 import _ from "lodash";
 import ThankYou from "./ThankYou";
-import { Dialog, LinearProgress } from "@mui/material";
-import ReactDOM from "react-dom";
+
 import LoadingScreen from "design/LoadingScreen/LoadingScreen";
 
 interface FormData {
