@@ -7,7 +7,7 @@ import ThankYou from "./ThankYou";
 import emailjs from "@emailjs/browser";
 
 import LoadingScreen from "design/LoadingScreen/LoadingScreen";
-//
+
 interface FormData {
   name: string;
   email: string;
