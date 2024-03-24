@@ -4,6 +4,7 @@ import Input from "design/Input/Input";
 import { useState } from "react";
 import _ from "lodash";
 import ThankYou from "./ThankYou";
+import emailjs from "@emailjs/browser";
 
 import LoadingScreen from "design/LoadingScreen/LoadingScreen";
 
@@ -59,6 +60,22 @@ const ContactMe = () => {
     validator(e.target.name, e.target.value);
   };
 
+  const sendEmail = async () => {
+    const res = await emailjs.send(
+      process.env.REACT_APP_SERVICE_ID!,
+      process.env.REACT_APP_TEMPLATE_ID!,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      {
+        publicKey: process.env.REACT_APP_PUBLIC_KEY,
+      }
+    );
+    return res;
+  };
+
   const handleSubmit = async () => {
     setIsLoading(true);
     setTouched({
@@ -78,11 +95,8 @@ const ContactMe = () => {
     setFormValid(true);
 
     //Submitting
-    await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(true);
-      }, 2000);
-    });
+    const res = await sendEmail();
+    console.log(res);
     setIsSubmitted(true);
     setIsLoading(false);
   };
