@@ -9,11 +9,17 @@ const Footer = () => {
           <Text color="inactive">Find me in: </Text>
         </div>
         <div className="flex outline h100 center pad-lf-20">
-          <Text color="inactive">LinkedIn </Text>
+          <Text color="inactive">
+            <a href="https://in.linkedin.com/in/karthik-nagaraja-432a57208">
+              LinkedIn
+            </a>
+          </Text>
         </div>
       </div>
       <div className="outline pad-lf-20 center h100 flex">
-        <Text color="inactive">@username</Text>
+        <Text color="inactive">
+          <a href="https://github.com/karthikn1720">@karthikn1720</a>
+        </Text>
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
 import React, { createContext } from "react";
 
-interface TabList {
+export interface TabList {
   label: string;
   item: SubItem[];
-  isFolderOpen?: boolean;
+  isFolderOpen: boolean;
 }
 
-interface SubItem {
+export interface SubItem {
   icon?: any;
   label: string;
-  subItem?: TabList[];
+  subItem?: SubItem[];
   isFolderOpen?: boolean;
   isFile?: boolean;
   page?: any;
   isBlog?: boolean;
-  id?: string | number;
+  id?: number;
 }
 //
 
@@ -22,6 +22,7 @@ interface UseTabReturn {
   activeTab: number | null;
   activeTabs: TabList[];
   setActiveTab: React.Dispatch<any>;
+  setActivePage: React.Dispatch<any>;
   tabsList: TabList[];
   handleTabClick: any;
   handleFileClick: any;
@@ -73,7 +74,7 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
     setTabs([...tabs]);
   };
 
-  const handleFileClick = (item: TabList, index: number, subIndex?: number) => {
+  const handleFileClick = (item: TabList) => {
     if (activeTabs.find((t) => t.label === item.label)) {
       setActivePage(item);
       return;
@@ -110,6 +111,7 @@ export const useTab = ({ tabsList }: UseTab): UseTabReturn => {
     activeTab,
     activeTabs,
     setActiveTab,
+    setActivePage,
     handleTabClick,
     handleFileClick,
     handleCloseFile,

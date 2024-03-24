@@ -20,7 +20,7 @@ const Sidebar = ({ showSidebar, setShowSidebar }: SidebarProps) => {
     handleTabClick(item, i, i2);
   };
 
-  console.log(tabsList);
+  //
 
   const handleBlogClick = (sItem: any, index: number, index2: number) => {
     handleFileClick(sItem, index, index2);

@@ -5,7 +5,13 @@ import Tab from "components/Tab/Tab";
 import { ReactComponent as GreenFolder } from "assets/green-folder.svg";
 import { ReactComponent as OrangeFolder } from "assets/orange-folder.svg";
 import { ReactComponent as BlueFolder } from "assets/blue-folder.svg";
-import { TabProvider, useTab } from "hooks/useTab";
+import {
+  SubItem,
+  TabList,
+  TabProvider,
+  useTab,
+  useTabContext,
+} from "hooks/useTab";
 import AboutMe from "pages/about-me/AboutMe";
 import Education from "pages/education/Education";
 import Experience from "pages/Experience/Experience";
@@ -17,8 +23,11 @@ import Blogs from "pages/blog/Blogs";
 import { getAllBlogs } from "api/blog";
 import Blog from "pages/blog/Blog";
 import Blog2 from "pages/blog/Blog2";
+import { Outlet } from "react-router-dom";
+import ContactMe from "pages/ContactMe/ContactMe";
+import Projects from "pages/Projects/Projects";
 
-const personalInfoItems = [
+const personalInfoItems: SubItem[] = [
   {
     label: "bio",
     icon: <BlueFolder />,
@@ -27,20 +36,19 @@ const personalInfoItems = [
   {
     label: "experience",
     icon: <OrangeFolder />,
-    subItem: [{ label: "Experience.js" }, { label: "Skills.js", id: 901 }],
+    subItem: [
+      { label: "Experience.js", id: 901 },
+      { label: "Skills.js", id: 902 },
+    ],
   },
   {
     label: "education",
     icon: <GreenFolder />,
-    subItem: [{ label: "Education.js", id: 902 }],
+    subItem: [{ label: "Education.js", id: 903 }],
   },
   {
-    label: "createBlog",
-    icon: <GreenFolder />,
-    subItem: [
-      { label: "create-blog", id: 903 },
-      { label: "blogs2", id: 903 },
-    ],
+    label: "projects",
+    isFile: true,
   },
 ];
 
@@ -52,33 +60,38 @@ const pages: any = {
   "create-blog": <CreateBlog />,
   blogs: <Blogs />,
   blogs2: <Blog2 />,
+  "contact-me": <ContactMe />,
+  projects: <Projects />,
 };
 
-const MainLayout = () => {
+const ItemWrapper = ({ isActive = false, children }: any) => {
+  return (
+    <div className="w100 h100" hidden={!isActive}>
+      {children}
+    </div>
+  );
+};
+
+const MainLayout = ({ children }: any) => {
   const [data, setData] = React.useState<any[]>([]);
 
-  React.useEffect(() => {
-    getAllBlogs().then((res) => {
-      console.log(res.data);
-      setData(
-        res.data?.map((item: any) => {
-          console.log(item.title);
-          return { label: item.title, id: item.id, isFile: true, isBlog: true };
-        })
-      );
-    });
-  }, []);
+  // React.useEffect(() => {
+  //   getAllBlogs().then((res) => {
+  //     console.log(res.data);
+  //     setData(
+  //       res.data?.map((item: any) => {
+  //         console.log(item.title);
+  //         return { label: item.title, id: item.id, isFile: true, isBlog: true };
+  //       })
+  //     );
+  //   });
+  // }, []);
 
-  const sidebarItems = [
+  const sidebarItems: TabList[] = [
     {
       label: "Personal Info",
       item: personalInfoItems,
-      isFolderOpen: false,
-    },
-    {
-      label: "Blogs",
-      item: data,
-      isFolderOpen: false,
+      isFolderOpen: true,
     },
   ];
   const [showSidebar, setShowSidebar] = React.useState(false);
@@ -88,8 +101,10 @@ const MainLayout = () => {
     tabs.setTabs(sidebarItems);
   }, [data]);
 
-  const { ActivePage } = tabs;
+  const { ActivePage, activeTabs } = tabs;
+
   console.log(ActivePage);
+
   return (
     <TabProvider tabs={tabs}>
       <div className="p-top-50 p-bottom-50 h100v overflow-h">
@@ -99,15 +114,16 @@ const MainLayout = () => {
           <div className="main-screen w100 bg-primary">
             <Tab></Tab>
             <div className="page overflow-s scroll-bar">
-              {ActivePage ? (
-                ActivePage?.isBlog ? (
-                  <Blog id={ActivePage.id} />
-                ) : (
-                  pages[ActivePage.label]
-                )
-              ) : (
+              {activeTabs.map((a) => {
+                return (
+                  <ItemWrapper isActive={ActivePage?.label === a.label}>
+                    {pages[a.label]}
+                  </ItemWrapper>
+                );
+              })}
+              <ItemWrapper isActive={!ActivePage}>
                 <Hello />
-              )}
+              </ItemWrapper>
             </div>
           </div>
         </div>

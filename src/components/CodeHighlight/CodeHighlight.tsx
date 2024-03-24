@@ -1,6 +1,9 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import {
+  oneDark,
+  vscDarkPlus,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 import "./code-highlight.scss";
 interface CodeHighlightProps {
   children: any;
@@ -17,6 +20,8 @@ const CodeHighlight = ({
   return (
     <SyntaxHighlighter
       customStyle={{
+        wordWrap: "break-word",
+        textOverflow: "ellipsis",
         border: "none",
         background: "none",
         boxShadow: "none",
@@ -28,7 +33,7 @@ const CodeHighlight = ({
       useInlineStyles
       showLineNumbers={showNumbers}
       language={language}
-      style={dark}
+      style={oneDark}
     >
       {children}
     </SyntaxHighlighter>

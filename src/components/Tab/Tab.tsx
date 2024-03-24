@@ -18,7 +18,7 @@ const Tab = () => {
             <Text onClick={() => handleChangeTab(tab)}>{tab.label}</Text>
             <button
               onClick={() => handleCloseFile(tab)}
-              className="curson-p color-inactive bg-primary fs-m"
+              className="curson-p color-inactive bg-primary btn-no-border fs-m"
             >
               x
             </button>

@@ -6,9 +6,9 @@ const Blog = ({ id }: { id: string | number | undefined }) => {
   const [data, setData] = React.useState<string>("");
   React.useEffect(() => {
     if (!id) return;
-    getBlog(id).then((val) => {
-      setData(val.content);
-    });
+    // getBlog(id).then((val) => {
+    //   setData(val.content);
+    // });
   }, [id]);
   return (
     <div className="bg-white h100 pad-lr-30 overflow-s">

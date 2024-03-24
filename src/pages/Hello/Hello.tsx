@@ -3,12 +3,12 @@ import Text from "design/Text/Text";
 import React from "react";
 import "./hello.scss";
 
-const Hello = () => {
+const Hello = ({ hidden }: any) => {
   return (
-    <div className=" h100 w100 flex center overflow-h">
+    <div className=" h100 w100 flex center overflow-h" hidden={true}>
       <div className="flex aic pad-lf-20 g20px">
         <div className="flex-1">
-          <Text type="active">Hi all, I am</Text>
+          <Text type="active">Hi, I am</Text>
           <Text fontSize={62} type="active">
             Karthik
           </Text>

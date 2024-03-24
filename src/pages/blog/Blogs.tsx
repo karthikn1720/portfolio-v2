@@ -6,7 +6,7 @@ const Blogs = () => {
   const [data, setData] = React.useState<any[]>([]);
   console.log(data);
   React.useEffect(() => {
-    getAllBlogs().then((res) => setData(res.data));
+    // getAllBlogs().then((res) => setData(res.data));
   }, []);
 
   const handleClick = () => {};
