@@ -1,9 +1,8 @@
-import { getAllBlogs } from "api/blog";
 import Text from "design/Text/Text";
 import React from "react";
 
 const Blogs = () => {
-  const [data, setData] = React.useState<any[]>([]);
+  const [data] = React.useState<any[]>([]);
   console.log(data);
   React.useEffect(() => {
     // getAllBlogs().then((res) => setData(res.data));

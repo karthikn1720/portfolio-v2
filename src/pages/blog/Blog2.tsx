@@ -1,4 +1,3 @@
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import axios from "axios";
 import React from "react";
 import Markdown from "react-markdown";
