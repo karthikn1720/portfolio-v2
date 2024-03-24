@@ -1,7 +1,6 @@
 import ProjectCard from "design/ProjectCard/ProjectCard";
-import React from "react";
+
 import img1 from "assets/project-1.png";
-import CodeHighlight from "components/CodeHighlight/CodeHighlight";
 
 const Projects = () => {
   return (

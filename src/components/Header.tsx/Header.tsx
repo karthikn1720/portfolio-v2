@@ -10,7 +10,7 @@ interface HeaderProps {
   setShowSidebar: React.Dispatch<any>;
 }
 const Header = ({ setShowSidebar }: HeaderProps) => {
-  const { setActivePage, ActivePage } = useTabContext();
+  const { setActivePage } = useTabContext();
 
   const contactMe = {
     id: 1,
@@ -19,7 +19,6 @@ const Header = ({ setShowSidebar }: HeaderProps) => {
   };
 
   const setHelloAsActive = () => {
-    console.log("clicked");
     setActivePage(null);
   };
 

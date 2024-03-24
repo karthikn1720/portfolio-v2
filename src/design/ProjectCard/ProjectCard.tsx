@@ -1,6 +1,5 @@
 import CodeHighlight from "components/CodeHighlight/CodeHighlight";
 import Button from "design/Button/Button";
-import Card from "design/Card/Card";
 import Text from "design/Text/Text";
 import React, { ReactNode } from "react";
 

@@ -5,13 +5,7 @@ import Tab from "components/Tab/Tab";
 import { ReactComponent as GreenFolder } from "assets/green-folder.svg";
 import { ReactComponent as OrangeFolder } from "assets/orange-folder.svg";
 import { ReactComponent as BlueFolder } from "assets/blue-folder.svg";
-import {
-  SubItem,
-  TabList,
-  TabProvider,
-  useTab,
-  useTabContext,
-} from "hooks/useTab";
+import { SubItem, TabList, TabProvider, useTab } from "hooks/useTab";
 import AboutMe from "pages/about-me/AboutMe";
 import Education from "pages/education/Education";
 import Experience from "pages/Experience/Experience";
@@ -20,10 +14,7 @@ import Hello from "pages/Hello/Hello";
 import React from "react";
 import CreateBlog from "pages/blog/CreateBlog";
 import Blogs from "pages/blog/Blogs";
-import { getAllBlogs } from "api/blog";
-import Blog from "pages/blog/Blog";
 import Blog2 from "pages/blog/Blog2";
-import { Outlet } from "react-router-dom";
 import ContactMe from "pages/ContactMe/ContactMe";
 import Projects from "pages/Projects/Projects";
 
@@ -73,7 +64,7 @@ const ItemWrapper = ({ isActive = false, children }: any) => {
 };
 
 const MainLayout = ({ children }: any) => {
-  const [data, setData] = React.useState<any[]>([]);
+  // const [data] = React.useState<any[]>([]);
 
   // React.useEffect(() => {
   //   getAllBlogs().then((res) => {
@@ -97,9 +88,9 @@ const MainLayout = ({ children }: any) => {
   const [showSidebar, setShowSidebar] = React.useState(false);
   const tabs = useTab({ tabsList: sidebarItems });
 
-  React.useEffect(() => {
-    tabs.setTabs(sidebarItems);
-  }, [data]);
+  // React.useEffect(() => {
+  //   tabs.setTabs(sidebarItems);
+  // }, [data]);
 
   const { ActivePage, activeTabs } = tabs;
 
