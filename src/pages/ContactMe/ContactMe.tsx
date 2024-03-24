@@ -49,7 +49,7 @@ const ContactMe = () => {
     });
     return err;
   };
-  console.log(process.env);
+
   const handleBlur = (e: any) => {
     setTouched((prev) => {
       return {
