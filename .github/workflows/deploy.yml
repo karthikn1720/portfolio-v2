@@ -58,6 +58,7 @@ jobs:
           REACT_APP_SERVICE_ID: ${{ secrets.REACT_APP_SERVICE_ID }}
           REACT_APP_TEMPLATE_ID: ${{ secrets.REACT_APP_TEMPLATE_ID }}
           REACT_APP_PUBLIC_KEY: ${{ secrets.REACT_APP_PUBLIC_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
